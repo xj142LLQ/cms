@@ -8,15 +8,13 @@
 
 $application = $di->get('config')->application;
 $loader = new \Phalcon\Loader();
-$loader->registerDirs([
-   $application->controllerDir,
-   $application->modelDir,
-   $application->validationDir,
-   $application->moduleDir
-])->registerNamespaces([
-
-    "Cms\\Controllers"            => $application->controllerDir,
-    "Cms\\Models"                 => $application->modelDir,
-    "Cms\\Validation"             => $application->validationDir,
-    "Cms\\Modules"                => $application->moduleDir
+$loader->registerNamespaces([
+    "Cms\\Controllers"     => $application->controllerDir,
+    "Cms\\Models"          => $application->modelDir,
+    "Cms\\Validation"      => $application->validationDir,
+    "Cms\\Modules"         => $application->moduleDir,
+    "Cms\\Base"            => $application->baseDir,
+    "Cms\\Library"         => $application->libraryDir,
+    "Cms\\Logic"           => $application->logicDir,
+    "Cms\\Entity"          => $application->entityDir
 ])->register();

@@ -23,3 +23,6 @@ $di->setShared('db', function () use ($di){
     ]);
 });
 
+$di->setShared('response', function () {
+    return new \Cms\Base\ResponseHandler();
+});
